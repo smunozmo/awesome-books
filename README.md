@@ -44,7 +44,9 @@ This is an example of how to list things you need to use the software and how to
 
 ## Author
 
-👤 **Author**
+👤 **Authors**
+
+- GitHub: [@afcataneda223](https://github.com/afcastaneda223)
 
 - GitHub: [@smunozmo](https://github.com/smunozmo)
 
