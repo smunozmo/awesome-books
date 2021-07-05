@@ -3,9 +3,8 @@
 const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookForm = document.getElementById("form");
-const bookAddBtn = document.getElementById('add');
-const bookArray = [];
-let index = 0;
+const bookAddBtn = document.getElementById("add");
+let bookArray = [JSON.parse(localStorage.getItem("bookObject"))];
 
 function bookUpdate() {
   const bookList = {
@@ -13,22 +12,16 @@ function bookUpdate() {
     author: bookAuthor.value,
   };
 
-  
   localStorage.setItem("bookList", JSON.stringify(bookList));
 
   bookArray.push(bookList);
-  index += 1;
 
-  localStorage.setItem("bookObject", JSON.stringify(bookArray));
-
-  const bookArrayBook = JSON.parse(localStorage.getItem('bookObject'))
+  bookArray <= localStorage.setItem("bookObject", JSON.stringify(bookArray));
 
   console.log(bookArray);
 }
 
 bookAddBtn.addEventListener("click", bookUpdate);
-
-
 
 // List creation
 const bookContainer = document.getElementById("list");
@@ -38,14 +31,19 @@ bookContainerUl.className = "list-group list-group-numbered";
 
 bookContainer.appendChild(bookContainerUl);
 
+// Featured Artists Functions
+
 function showBook(e) {
-  `
-<li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action">
-<div class="ms-2 me-auto">
-    <h2 class="fw-bold">${bookArrayObject[e].title}</h2>
-    <h3>${bookArrayObject[e].author}</h3>
-</div>
-<button type="button" class="btn btn-warning" id="book-id-${e}"> <i class="far fa-trash-alt"></i> </button>
-</li>
-`;
+  return `
+  <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action">
+  <div class="ms-2 me-auto">
+      <h2 class="fw-bold">${bookArray[e].title}</h2>
+      <h3>${bookArray[e].author}</h3>
+  </div>
+  <button type="button" class="btn btn-warning" id="book-id-${e}"> <i class="far fa-trash-alt"></i> </button>
+  </li>`;
+}
+
+for (let index = 1; index < bookArray.length; index++) {
+  bookContainerUl.innerHTML += showBook(index);
 }
