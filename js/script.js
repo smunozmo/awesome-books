@@ -4,7 +4,20 @@ const bookTitle = document.getElementById("title");
 const bookAuthor = document.getElementById("author");
 const bookForm = document.getElementById("form");
 const bookAddBtn = document.getElementById("add");
-let bookArray = [JSON.parse(localStorage.getItem("bookObject"))];
+
+
+// let bookArray = [JSON.parse(localStorage.getItem("bookObject"))];
+let bookArray = [];
+
+ if (localStorage.getItem("bookObject") !== null) {
+JSON.parse(localStorage.getItem("bookObject")).forEach(element => {
+  bookArray.push(element);
+});
+
+ console.log(JSON.parse(localStorage.getItem("bookObject")));
+ } else {
+ bookArray = [];
+}
 
 function bookUpdate() {
   const bookList = {
@@ -12,27 +25,15 @@ function bookUpdate() {
     author: bookAuthor.value,
   };
 
-  localStorage.setItem("bookList", JSON.stringify(bookList));
-
-  bookArray.push(bookList);
-
-  bookArray <= localStorage.setItem("bookObject", JSON.stringify(bookArray));
-
   console.log(bookArray);
-}
-
-bookAddBtn.addEventListener("click", bookUpdate);
-
-// List creation
-const bookContainer = document.getElementById("list");
-
-const bookContainerUl = document.createElement("ul");
-bookContainerUl.className = "list-group list-group-numbered";
-
-bookContainer.appendChild(bookContainerUl);
-
-// Featured Artists Functions
-
+  
+  
+  bookArray.push(bookList);
+  
+  localStorage.setItem("bookObject", JSON.stringify(bookArray));
+  
+ 
+  
 function showBook(e) {
   return `
   <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action">
@@ -42,8 +43,25 @@ function showBook(e) {
   </div>
   <button type="button" class="btn btn-warning" id="book-id-${e}"> <i class="far fa-trash-alt"></i> </button>
   </li>`;
-}
+} 
 
-for (let index = 1; index < bookArray.length; index++) {
+for (let index = 0; index < bookArray.length; index++) {
   bookContainerUl.innerHTML += showBook(index);
 }
+
+ }
+
+bookAddBtn.addEventListener("click", bookUpdate);
+
+
+
+// List creation
+const bookContainer = document.getElementById("list");
+
+const bookContainerUl = document.createElement("ul");
+bookContainerUl.className = "list-group list-group-numbered";
+
+bookContainer.appendChild(bookContainerUl);
+
+
+
