@@ -1,0 +1,155 @@
+// program
+
+.program {
+  background-image: url("../assets/img/pattern.png");
+  background-size: 5vw 5vw;
+  background-color: $dark;
+  padding-bottom: 4vw;
+
+  @include breakpoint(min-width: $bp) {
+    background-size: 2.5vw 2.5vw;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: initial;
+  }
+
+  text-align: center;
+
+  h2 {
+    color: $light-grey;
+    padding: 8vw 0 0 0;
+    font-size: 5vw;
+
+    @include breakpoint(desktop) {
+      padding: 4vw 0 0 0;
+      font-size: 1.5vw;
+    }
+
+    h2::after {
+      display: block;
+      clear: both;
+      content: "";
+      position: relative;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 10vw;
+      border-bottom: 1px solid $orange;
+      margin: 0 auto;
+      padding: 4px 0;
+
+      @include breakpoint(desktop) {
+        width: 4vw;
+      }
+    }
+  }
+
+  .program-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin: 3vw 0 3vw 0;
+
+    @include breakpoint(desktop) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin: 3vw 0 3vw 0;
+    }
+
+    .program-item {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-align: left;
+      height: 22vw;
+      margin: 1.5vw 3vw;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      @include breakpoint(desktop) {
+        height: 16vw;
+        width: 14vw;
+        margin: 0.2vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      img {
+        height: 10vw;
+        width: 10vw;
+        opacity: 0.7;
+        margin: 4vw 6vw 1vw 6vw;
+        align-self: center;
+
+        @include breakpoint(desktop) {
+          height: 3vw;
+          width: 3vw;
+          opacity: 0.7;
+          margin: 2vw 0 0 0;
+          align-self: center;
+        }
+      }
+
+      h3 {
+        color: $orange;
+        font-size: 4vw;
+        font-weight: 600;
+        margin: 1vw 0 0 0;
+        align-self: center;
+        min-width: 22vw;
+
+        @include breakpoint(desktop) {
+          color: $orange;
+          font-size: 1.5vw;
+          font-weight: 600;
+          margin: 1vw 0 0 0;
+        }
+      }
+
+      p {
+        color: $light-grey;
+        margin: 1vw 1vw 0 3vw;
+        line-height: 5vw;
+        font-size: 3vw;
+        align-self: center;
+
+        @include breakpoint(desktop) {
+          color: $light-grey;
+          margin: 1vw 1vw 0 1vw;
+          line-height: 1.7vw;
+          font-size: 1vw;
+        }
+      }
+    }
+  }
+
+  &-link {
+    padding: 5vw 0 5vw 0;
+    margin: 10vw 14vw;
+    background-color: $orange;
+
+    @include breakpoint(desktop) {
+      background: none;
+      width: unset;
+      margin: 0;
+    }
+
+    a {
+      color: $white;
+      font-size: 4vw;
+
+      @include breakpoint(desktop) {
+        color: $light-grey;
+        font-size: 1vw;
+        font-weight: 100;
+        text-decoration: underline;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

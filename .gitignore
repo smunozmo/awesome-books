@@ -1,0 +1,8 @@
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules
+node_modules/
+
+# Ignore live server settings
+.vscode/settings.json

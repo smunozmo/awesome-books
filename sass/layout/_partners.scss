@@ -1,0 +1,56 @@
+// partners
+
+.partners {
+  background-color: $dark;
+  text-align: center;
+  padding-bottom: 1vw;
+
+  h2 {
+    padding: 8vw 0 5vw 0;
+    font-size: 5vw;
+    color: $grey;
+
+    @include breakpoint(desktop) {
+      padding: 4vw 0 0 0;
+      font-size: 1.5vw;
+    }
+
+    &::after {
+      display: block;
+      clear: both;
+      content: "";
+      position: relative;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 4vw;
+      border-bottom: 1px solid $orange;
+      margin: 0 auto;
+      padding: 4px 0;
+    }
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3vw 0 3vw 0;
+
+    @include breakpoint(desktop) {
+      flex-wrap: nowrap;
+      margin: 3vw 0 3vw 0;
+    }
+
+    img {
+      width: 22vw;
+      margin: 2vw 5vw;
+      filter: grayscale(100%);
+
+      @include breakpoint(desktop) {
+        width: 10vw;
+        margin: 2vw;
+      }
+    }
+  }
+}

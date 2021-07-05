@@ -1,0 +1,84 @@
+// header
+.hello {
+  background-image: url("../assets/img/bg.jpg");
+  background-size: cover;
+  margin: 0 0 0 0;
+  overflow: hidden;
+
+  .subheading {
+    font-size: 5vw;
+    color: $orange;
+    margin: 30vw 6vw 1vw 6vw;
+
+    @include breakpoint(desktop) {
+      margin: 5vw 0 1vw 15vw;
+      font-size: 3vw;
+      font-weight: 100;
+    }
+  }
+
+  .title {
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    font-size: 7vw;
+    line-height: 8vw;
+    color: $orange;
+    margin: 0 6vw 1vw 6vw;
+    overflow: hidden;
+
+    @include breakpoint(desktop) {
+      margin: 0 30vw 0 15vw;
+      font-size: 5vw;
+      line-height: 5vw;
+    }
+  }
+
+  .intro {
+    margin: 6vw 6vw 1vw 6vw;
+    background-color: $light-grey;
+    border: 1px solid $white;
+    width: calc(100% - 12vw);
+
+    @include breakpoint(desktop) {
+      margin: 0 30vw 0 15vw;
+      background-color: $light-grey;
+      width: 48vw;
+    }
+
+    p {
+      font-size: 3vw;
+      line-height: 5vw;
+      margin: 3vw;
+      color: $dark;
+
+      @include breakpoint(desktop) {
+        font-size: 1vw;
+        line-height: 2vw;
+        margin: 1vw 1vw 1vw 1vw;
+      }
+    }
+  }
+
+  .date {
+    margin: 4vw 6vw 1vw 6vw;
+    font-size: 6vw;
+    font-family: $secondary-font;
+    color: $mid-grey;
+
+    @include breakpoint(desktop) {
+      font-size: 2vw;
+      margin: 2vw 30vw 0 15vw;
+    }
+  }
+
+  .at {
+    font-size: 3vw;
+    color: $mid-grey;
+    margin: 0 6vw 15vw 6vw;
+
+    @include breakpoint(desktop) {
+      margin: 0.5vw 30vw 5vw 15vw;
+      font-size: 1.5vw;
+    }
+  }
+}
