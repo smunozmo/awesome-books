@@ -1,4 +1,4 @@
-# Capstone
+# Awesome Books - Javascript
 
 > This is a project to create and a list of Awesome Books!
 
@@ -45,10 +45,15 @@ This is an example of how to list things you need to use the software and how to
 
 👤 **Authors**
 
-- GitHub: [@afcataneda223](https://github.com/afcastaneda223)
+**Andres Felipe Castañeda Ramos**
+- Github: [@afcastaneda223](https://github.com/afcastaneda223)
+- Twitter: [@afcastaneda](https://twitter.com/afcastaneda)
+- Linkedin: [Andres Felipe Castañeda](www.linkedin.com/in/andres-castaneda223)
 
+**Sebastián Muñoz Montoya**
 - GitHub: [@smunozmo](https://github.com/smunozmo)
-
+- Twitter: [@smunozmo](https://twitter.com/smunozmo)
+- Linkedin: [Sebastián Muñoz M](www.linkedin.com/in/smunozmo)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
