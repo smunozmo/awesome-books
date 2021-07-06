@@ -10,7 +10,8 @@ const bookContainerUl = document.createElement('ul');
 bookContainerUl.className = 'list-group list-group-numbered';
 bookContainer.appendChild(bookContainerUl);
 
-let bookArray = [];
+
+let bookArray = new Array();
 
 if (localStorage.getItem('bookObject') !== null) {
   JSON.parse(localStorage.getItem('bookObject')).forEach((element) => {
@@ -36,11 +37,18 @@ function showBook() {
 
 showBook(); // run the function to show the list on load
 
+class Books {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+};
+
 function bookUpdate() {
-  const bookList = {
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  };
+
+  let bookList = new Books(bookTitle.value, bookAuthor.value);
+
+  
 
   bookArray.push(bookList);
   localStorage.setItem('bookObject', JSON.stringify(bookArray));
