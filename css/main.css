@@ -1,6 +1,6 @@
 * {
   font-family: uchen, sans-serif;
-  font-size: 1vw;
+  font-size: 1em;
   color: #000;
 }
 
@@ -9,5 +9,9 @@ li,
 a {
   text-decoration: none;
   list-style: none;
+}
+
+body {
+  background-color: #ffc107;
 }
 /*# sourceMappingURL=main.css.map */

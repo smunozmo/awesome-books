@@ -19,21 +19,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <div class="container m-5 p-5 text-center align-middle">
-        <h1>Awesome Books</h1>
-        <form id="form">
-            <div class="mb-3">
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Title">
-            </div>
-            <div class="mb-3">
-                <input type="text" class="form-control" id="author" placeholder="Author">
-            </div>
-            <button type="button" class="btn btn-dark" id="add">Add</button>
-        </form>
-    </div>
-    <div class="container" id="list">
-        <h1 class="text-center">My Book List</h1>
-
+    <div class="container text-center align-middle py-5">
+        <div class="container" id="list">
+            <h1 class="text-center">My Book List</h1>
+        </div>
+        <div class="container text-center my-5 align-middle">
+            <h1>Awesome Books</h1>
+            <form id="form">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="title" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="author" placeholder="Author">
+                </div>
+                <button type="submit" class="btn btn-dark" id="add">Add</button>
+            </form>
+        </div>
     </div>
 
     <script src="./js/script.js"></script>
