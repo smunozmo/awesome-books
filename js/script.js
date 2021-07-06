@@ -53,8 +53,9 @@ class Library {
   }
 }
 
+let a = new Library();
+a.showBook(bookArray);
 bookAddBtn.addEventListener("click", () => {
-  let a = new Library();
   if (bookTitle.value === "" || bookAuthor.value === "") {
     bookAddBtn.setCustomValidity("Oops! Please type an author and title.");
   } else {
