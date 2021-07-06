@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 // Localstorage Books
 
 const bookTitle = document.getElementById('title');
@@ -10,6 +11,12 @@ const bookContainerUl = document.createElement('ul');
 bookContainerUl.className = 'list-group list-group-numbered';
 bookContainer.appendChild(bookContainerUl);
 
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
 let bookArray = [];
 
 if (localStorage.getItem('bookObject') !== null) {
@@ -20,49 +27,46 @@ if (localStorage.getItem('bookObject') !== null) {
   bookArray = [];
 }
 
-function showBook() {
-  bookContainerUl.innerHTML = ''; // reset the content to avoid acumulation
-  for (let e = 0; e < bookArray.length; e += 1) {
-    bookContainerUl.innerHTML += `
-      <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4">
-  <div class="ms-2 me-auto">
-      <h2 class="fw-bold">${bookArray[e].title}</h2>
-      <h3>${bookArray[e].author}</h3>
-  </div>
-  <button type="button" class="btn btn-warning fs-2" onclick="bookRemove(${e})"> <i class="far fa-trash-alt fs-2"></i> </button>
-  </li>`;
+class Library {
+  showBook(bookArray) {
+    this.bookArray = bookArray;
+    bookContainerUl.innerHTML = ''; // reset the content to avoid acumulation
+    for (let e = 0; e < bookArray.length; e += 1) {
+      bookContainerUl.innerHTML += `
+    <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4 ${e}">
+    <div class="ms-2 me-auto">
+    <h2 class="fw-bold">${bookArray[e].title}</h2>
+    <h3>${bookArray[e].author}</h3>
+    </div>
+    <button type="button" class="btn btn-warning fs-2" onclick="a.bookRemove(${e}, a)"> <i class="far fa-trash-alt fs-2"></i> </button>
+    </li>`;
+    }
+  }
+
+  bookUpdate(x) {
+    this.x = x;
+    bookArray.push(x);
+    localStorage.setItem('bookObject', JSON.stringify(bookArray));
+    return bookArray;
+  }
+
+  bookRemove(e, j) {
+    this.e = e;
+    this.j = j;
+    bookArray.splice(e, 1);
+    localStorage.setItem('bookObject', JSON.stringify(bookArray));
+    j.showBook(bookArray);
   }
 }
 
-showBook(); // run the function to show the list on load
-
-function bookUpdate() {
-  const bookList = {
-    title: bookTitle.value,
-    author: bookAuthor.value,
-  };
-
-  bookArray.push(bookList);
-  localStorage.setItem('bookObject', JSON.stringify(bookArray));
-
-  showBook();
-}
-
-function bookRemove(e) {
-  bookArray.splice(e, 1);
-  localStorage.setItem('bookObject', JSON.stringify(bookArray));
-  showBook();
-}
-
-if (!bookArray) {
-  // Avoid linter error
-  bookRemove(0);
-}
-
+const a = new Library();
+a.showBook(bookArray);
 bookAddBtn.addEventListener('click', () => {
   if (bookTitle.value === '' || bookAuthor.value === '') {
     bookAddBtn.setCustomValidity('Oops! Please type an author and title.');
   } else {
-    bookUpdate();
+    const bookList = new Book(bookTitle.value, bookAuthor.value);
+    a.bookUpdate(bookList);
+    a.showBook(bookArray);
   }
 });
