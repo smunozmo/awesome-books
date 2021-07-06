@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 // Localstorage Books
 
 const bookTitle = document.getElementById('title');
