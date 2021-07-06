@@ -31,12 +31,12 @@ class Library {
     bookContainerUl.innerHTML = ""; // reset the content to avoid acumulation
     for (let e = 0; e < bookArray.length; e += 1) {
       bookContainerUl.innerHTML += `
-    <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4">
+    <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4 ${e}">
     <div class="ms-2 me-auto">
     <h2 class="fw-bold">${bookArray[e].title}</h2>
     <h3>${bookArray[e].author}</h3>
     </div>
-    <button type="button" class="btn btn-warning fs-2" onclick="a.bookRemove(${e})"> <i class="far fa-trash-alt fs-2"></i> </button>
+    <button type="button" class="btn btn-warning fs-2" onclick="a.bookRemove(${e}, a)"> <i class="far fa-trash-alt fs-2"></i> </button>
     </li>`;
     }
   }
@@ -47,9 +47,10 @@ class Library {
     return bookArray;
   }
 
-  bookRemove(e) {
+  bookRemove(e, j) {
     bookArray.splice(e, 1);
-    localStorage.setItem("bookObject", JSON.stringify(bookArray));
+    localStorage.setItem('bookObject', JSON.stringify(bookArray));
+    j.showBook(bookArray);
   }
 }
 
