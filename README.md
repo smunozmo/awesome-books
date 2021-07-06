@@ -1,8 +1,7 @@
-# Capstone
+# Awesome Books - Javascript
 
-> Welcome to my HTML + CSS + Javascript Capstone project, feel free to look around. For this project I created a concert for developers sponsored by Microverse.
+> This is a project to create and a list of Awesome Books!
 
-- Live version: [GitHub Page](https://smunozmo.github.io/Module_1_Capstone/)
 
 ![screenshot](./assets/img/screenshot.png)
 
@@ -30,7 +29,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- 1. Get a free API Key at [https://example.com](https://example.com) -->
 1. Clone the repo
    ```sh
-   git clone git@github.com:smunozmo/Module_1_Capstone.git
+   git clone git@github.com:smunozmo/awesome-books.git
    ```
 2. Install NPM packages
    ```sh
@@ -44,20 +43,27 @@ This is an example of how to list things you need to use the software and how to
 
 ## Author
 
-👤 **Author**
+👤 **Authors**
 
+**Andres Felipe Castañeda Ramos**
+- Github: [@afcastaneda223](https://github.com/afcastaneda223)
+- Twitter: [@afcastaneda](https://twitter.com/afcastaneda)
+- Linkedin: [Andres Felipe Castañeda](www.linkedin.com/in/andres-castaneda223)
+
+**Sebastián Muñoz Montoya**
 - GitHub: [@smunozmo](https://github.com/smunozmo)
-
+- Twitter: [@smunozmo](https://twitter.com/smunozmo)
+- Linkedin: [Sebastián Muñoz M](www.linkedin.com/in/smunozmo)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/smunozmo/Portfolio/issues).
+Feel free to check the [issues page](https://github.com/smunozmo/awesome-books/issues).
 
 
 ## 👋 Acknowledgements
 
-Design inspired by [Cindy Shin](https://www.behance.net/gallery/29845175/CC-Global-Summit-2015). 
+Microverse
 
 ## Show your support
 

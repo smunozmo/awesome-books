@@ -1,11 +1,9 @@
 // reset
+
 * {
   font-family: $primary-font;
-  font-size: 1vw;
-  padding-inline-start: 0;
-  margin: 0;
+  font-size: 1em;
   color: $dark;
-  padding: 0;
 }
 
 ul,
@@ -13,4 +11,8 @@ li,
 a {
   text-decoration: none;
   list-style: none;
+}
+
+body {
+  background-color: #ffc107;
 }
