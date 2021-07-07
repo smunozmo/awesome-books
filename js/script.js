@@ -35,8 +35,7 @@ class Library {
       bookContainerUl.innerHTML += `
     <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4 ${e}">
     <div class="ms-2 me-auto">
-    <h2 class="fw-bold">${bookArray[e].title}</h2>
-    <h3>${bookArray[e].author}</h3>
+    <h3 class="fw-bold">"${bookArray[e].title}" by ${bookArray[e].author}</h3>
     </div>
     <button type="button" class="btn btn-warning fs-2" onclick="a.bookRemove(${e}, a)"> <i class="far fa-trash-alt fs-2"></i> </button>
     </li>`;
@@ -68,5 +67,6 @@ bookAddBtn.addEventListener('click', () => {
     const bookList = new Book(bookTitle.value, bookAuthor.value);
     a.bookUpdate(bookList);
     a.showBook(bookArray);
+    document.getElementById('form').reset();
   }
 });
