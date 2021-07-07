@@ -10,6 +10,15 @@ const bookContainer = document.getElementById('list');
 const bookContainerUl = document.createElement('ul');
 bookContainerUl.className = 'list-group list-group-numbered';
 bookContainer.appendChild(bookContainerUl);
+let bookArray = [];
+// .navegation
+const btnList = document.getElementById('navList');
+const btnNew = document.getElementById('new');
+const btnContact = document.getElementById('contact');
+const btnlogo = document.getElementById('logo');
+const formContainer = document.getElementById('formContainer');
+const contactContainer = document.getElementById('contactContainer');
+// class Book
 
 class Book {
   constructor(title, author) {
@@ -17,7 +26,6 @@ class Book {
     this.author = author;
   }
 }
-let bookArray = [];
 
 if (localStorage.getItem('bookObject') !== null) {
   JSON.parse(localStorage.getItem('bookObject')).forEach((element) => {
@@ -26,6 +34,8 @@ if (localStorage.getItem('bookObject') !== null) {
 } else {
   bookArray = [];
 }
+
+// class Library
 
 class Library {
   showBook(bookArray) {
@@ -58,7 +68,10 @@ class Library {
   }
 }
 
+// run code
+
 const a = new Library();
+
 a.showBook(bookArray);
 bookAddBtn.addEventListener('click', () => {
   if (bookTitle.value === '' || bookAuthor.value === '') {
@@ -69,4 +82,30 @@ bookAddBtn.addEventListener('click', () => {
     a.showBook(bookArray);
     document.getElementById('form').reset();
   }
+});
+
+// navbar event listeners
+
+btnList.addEventListener('click', () => {
+  contactContainer.style.display = 'none';
+  formContainer.style.display = 'none';
+  bookContainer.style.display = 'block';
+});
+
+btnNew.addEventListener('click', () => {
+  contactContainer.style.display = 'none';
+  formContainer.style.display = 'block';
+  bookContainer.style.display = 'none';
+});
+
+btnContact.addEventListener('click', () => {
+  contactContainer.style.display = 'block';
+  formContainer.style.display = 'none';
+  bookContainer.style.display = 'none';
+});
+
+btnlogo.addEventListener('click', () => {
+  contactContainer.style.display = 'block';
+  formContainer.style.display = 'block';
+  bookContainer.style.display = 'block';
 });
