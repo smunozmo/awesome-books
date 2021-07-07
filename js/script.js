@@ -1,14 +1,14 @@
 /* eslint-disable max-classes-per-file */
 // Localstorage Books
 
-const bookTitle = document.getElementById('title');
-const bookAuthor = document.getElementById('author');
-const bookAddBtn = document.getElementById('add');
+const bookTitle = document.getElementById("title");
+const bookAuthor = document.getElementById("author");
+const bookAddBtn = document.getElementById("add");
 
 // List creation
-const bookContainer = document.getElementById('list');
-const bookContainerUl = document.createElement('ul');
-bookContainerUl.className = 'list-group list-group-numbered';
+const bookContainer = document.getElementById("list");
+const bookContainerUl = document.createElement("ul");
+bookContainerUl.className = "list-group list-group-numbered";
 bookContainer.appendChild(bookContainerUl);
 
 class Book {
@@ -19,8 +19,8 @@ class Book {
 }
 let bookArray = [];
 
-if (localStorage.getItem('bookObject') !== null) {
-  JSON.parse(localStorage.getItem('bookObject')).forEach((element) => {
+if (localStorage.getItem("bookObject") !== null) {
+  JSON.parse(localStorage.getItem("bookObject")).forEach((element) => {
     bookArray.push(element);
   });
 } else {
@@ -30,7 +30,7 @@ if (localStorage.getItem('bookObject') !== null) {
 class Library {
   showBook(bookArray) {
     this.bookArray = bookArray;
-    bookContainerUl.innerHTML = ''; // reset the content to avoid acumulation
+    bookContainerUl.innerHTML = ""; // reset the content to avoid acumulation
     for (let e = 0; e < bookArray.length; e += 1) {
       bookContainerUl.innerHTML += `
     <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action p-4 ${e}">
@@ -45,7 +45,7 @@ class Library {
   bookUpdate(x) {
     this.x = x;
     bookArray.push(x);
-    localStorage.setItem('bookObject', JSON.stringify(bookArray));
+    localStorage.setItem("bookObject", JSON.stringify(bookArray));
     return bookArray;
   }
 
@@ -53,20 +53,20 @@ class Library {
     this.e = e;
     this.j = j;
     bookArray.splice(e, 1);
-    localStorage.setItem('bookObject', JSON.stringify(bookArray));
+    localStorage.setItem("bookObject", JSON.stringify(bookArray));
     j.showBook(bookArray);
   }
 }
 
 const a = new Library();
 a.showBook(bookArray);
-bookAddBtn.addEventListener('click', () => {
-  if (bookTitle.value === '' || bookAuthor.value === '') {
-    bookAddBtn.setCustomValidity('Oops! Please type an author and title.');
+bookAddBtn.addEventListener("click", () => {
+  if (bookTitle.value === "" || bookAuthor.value === "") {
+    bookAddBtn.setCustomValidity("Oops! Please type an author and title.");
   } else {
     const bookList = new Book(bookTitle.value, bookAuthor.value);
     a.bookUpdate(bookList);
     a.showBook(bookArray);
-    document.getElementById('form').reset();
+    document.getElementById("form").reset();
   }
 });
