@@ -67,6 +67,6 @@ bookAddBtn.addEventListener('click', () => {
     const bookList = new Book(bookTitle.value, bookAuthor.value);
     a.bookUpdate(bookList);
     a.showBook(bookArray);
-    document.getElementById("form").reset();
+    document.getElementById('form').reset();
   }
 });
